@@ -1,0 +1,109 @@
+<!-- 
+Forms in HTML 
+
+if form action is not set - then upon submitting it will be appending the form data in the URL as query parameters - this is not recommended for sensitive data like passwords, credit card info, etc.
+if name: values are not set then url will be appended as blank - this is not recommended as it will be difficult to retrieve the data on the server side
+
+First label: Then input:
+    >> label: for="" - it should match with the id of the input field
+    >> input: type="" - it defines the type of input field
+
+Input Types:
+    >> text: for single line text input max 30 characters
+    >> number: for numeric input
+    >> email: for email input
+    >> date: for date input
+    >> password: for password input
+    >> radio: for SINGLE selection from MULTIPLE options
+        >> name: is used when selecting any ONE option - if value is separate it will act as second selector
+        >> for: in label & id: in input - walk together - it makes the complete element one
+    >> checkbox: for MULTIPLE selection from MULTIPLE options
+    >> color: for selecting a color
+    >> submit: for submitting the form
+    >> reset: for resetting the form
+
+    >> minlength: minimum length of input
+    >> maxlength: maximum length of input
+    >> required: makes the input mandatory
+    >> placeholder: shows a hint in the input field
+    >> disabled: disables the input field
+    >> value: sets a default value in the input field
+    >> checked: for checkbox and radio - to set a default selection
+
+select tag: for dropdown selection
+    >> option: for options in select tag
+
+textarea tag: for multi-line text input
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+    <h2>Forms in HTML:</h2>
+    <!-- <form action="003_textFormatters.html"> -->
+    <form action="">
+        <label for="firstName">Enter your First Name:</label>
+        <input value="" name="fname" id="firstName" minlength="5" maxlength="15" required placeholder="John">
+        
+        <label for="middleName">Enter your Middle Name:</label>
+        <input type="text" id="middleName" value="Sanjeev">
+
+        <label for="">Enter your Last Name:</label>
+        <input type="text" required placeholder="Doe" disabled><br><br>
+    
+        <label for="">Age:</label>
+        <input type="number" required placeholder="18"><br><br>
+
+        <label for="">Email:</label>
+        <input type="email" required placeholder="john.doe@example.com"><br><br>
+
+        <label for="">Date of Joining:</label>
+        <input type="date" required><br><br>
+
+        <label for="">Password:</label>
+        <input type="password" required placeholder="Enter your password"><br><br>
+
+        <p>Enter you Shirt Size:</p>
+        <input type="radio" name="shirtSize" id="small" value="small"><label for="small">Small</label>
+        <input type="radio" name="shirtSize" id="medium" value="medium"><label for="medium">Medium</label>
+        <input type="radio" name="shirtSize" id="large" checked value="large"><label for="large">Large</label>
+        <input type="radio" name="shirtSize" id="extra-large" value="extraLarge"><label for="extra-large">Extra Large</label><br><br>
+
+        <p>Select the Known Languages:</p>
+        <input type="checkbox" name="languages" id="english" checked value="english"><label for="english">English</label>
+        <input type="checkbox" name="languages" id="spanish" value="spanish"><label for="spanish">Spanish</label>
+        <input type="checkbox" name="languages" id="french" value="french"><label for="french">French</label>
+        <input type="checkbox" name="languages" id="german" value="german"><label for="german">German</label>
+        <input type="checkbox" name="languages" id="japanese" value="japanese"><label for="japanese">Japanese</label><br><br>
+
+        <label for="color">Please select a color for you Shirt:</label>
+        <input type="color" id="color"><br><br>
+
+        <label for="paymentOptions">Please select a payment option:</label>
+        <select name="payment" id="paymentOptions">
+            <option value="">-- Please select --</option>
+            <option value="">gPay</option>
+            <option value="">PhonePe</option>
+            <option value="">PayTM</option>
+            <option value="">PayPal</option>
+            <option value="">Stripe</option>
+            <option value="">AmazonPay</option>
+            <option value="UPI">UPI</option>
+            <option value="">Credit Card</option>
+            <option value="">Debit Card</option>
+            <option value="cod">Cash on Delivery</option>
+        </select><br><br>
+
+        <label for="cmts">Please provide your Valuable Feedback:</label>
+        <!-- <input type="text"><br><br> -->
+        <textarea name="cmt" id="cmts" cols="10" rows="2"></textarea><br><br>
+
+        <input type="reset">   <input type="submit">
+    </form>
+</body>
+</html>
